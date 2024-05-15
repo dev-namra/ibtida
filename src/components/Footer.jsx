@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom'
-import Logo from '../icons_assets/logo.svg'
+import Logo from '../icons_assets/Logo_footer.png'
 
 const Footer = (props)=> {
     return (
-            <section id='footer'>
-                <div className="footer-info">
-                    <img src={Logo} alt='Logo' />
+            <section className='bg-[#fafafa] w-full'>
+                <div className='flex'>
                     <div className='doormat-navigation'>
-                        <h4>Doormat Navigation</h4>
-                        <ul>
+                        <h3>All Food. No Spam.</h3>
+                        <h3>Get the newsletter here</h3>
+                        <input type="email" name="" id="" />
+                        <ul className='flex'>
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/about'>About</Link></li>
                             <li><Link to='/menu'>Menu</Link></li>
@@ -32,8 +33,9 @@ const Footer = (props)=> {
                         </ul>
                     </div>
                 </div>
+                <img src={Logo} alt='Logo' className='h-10' />
                 <div className="copyright">
-                    Copyright ©️ 2023 Gelo
+                    Copyright ©️ 2024 Namra Mahak
                     <a href='https://www.github.com/Bongani001' target='_blank' rel="noreferrer"><img src={require('../icons_assets/github-logo.png')} alt='Github logo' style={{width: 20, borderRadius: 5}} /></a>
                 </div>
             </section>
