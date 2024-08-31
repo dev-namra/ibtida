@@ -5,7 +5,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
                     {/* Logo and Social Links */}
                     <div className="flex flex-col justify-center">
-                        <a href="/" className="mb-4">
+                        <a href="https://www.linkedin.com/in/namra-mahak/" className="mb-4">
                             <h3 className="text-xl md:text-7xl 5font-bold font-fraunces text-custom-orange">Ibtida</h3>
                         </a>
                     </div>
@@ -25,11 +25,6 @@ const Footer = () => {
                             8:00 am - 9:00 pm
                         </div>
                     </div>
-                </div>
-
-                <div className="flex flex-col my-8 md:my-16">
-                    <a href="#" className="text-sm mb-2 hover:underline">Instagram</a>
-                    <a href="#" className="text-sm hover:underline">Facebook</a>
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between items-center mt-8">
