@@ -1,33 +1,87 @@
-import React from 'react';
-import {specials} from '../data';
-import { Link } from 'react-router-dom';
-
 const Specials = () => {
 
     return (
-        <section id='specials-section'>
-            <div className="specials-top">
-                <h2>This week's specials!</h2>
-                <button className="button order-online"><Link to='/order-online'>Order online</Link></button>
-            </div>
-            <div className="specials">
-                {specials.map(item => {
-                    return (
-                        <div key={item.id} className='special'>
-                            <div className="special-content">
-                                <img src={item.image} alt={item.alt} />
-                                <div className="special-name">
-                                    <h4>{item.title}</h4>
-                                    <p>{item.price}</p>
-                                </div>
-                                <p>{item.description}</p>
+        <section className="bg-background-beige">
+            <div class="container mx-auto px-4">
+                <div class="py-12 md:py-20">
+                    <div class="mb-16 text-center">
+                        <h2 class="text-5xl md:text-7xl font-bold font-fraunces text-custom-orange">Our Menu</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16 md:mb-20">
+                        <h3 class="col-span-full text-2xl font-semibold font-fraunces text-center md:text-left">Favorite Dishes</h3>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                            <div class="text-xl font-medium">Beef Wellington</div>
+                            <div class="text-xl font-medium">$39</div>
                             </div>
-                            <div className='order'>
-                                Order a delivery <img src={require('../../icons_assets/scooter-icon.jpg')} alt='Cyclist icon' width='30px' />
+                            <div class="text-sm text-gray-600">
+                            A classic dish made with filet mignon, pâté, and mushrooms, wrapped in puff pastry and baked to a golden brown.
                             </div>
                         </div>
-                    )
-                })}
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="text-xl font-medium">Rack of Lamb</div>
+                                <div class="text-xl font-medium">$29</div>
+                            </div>
+                            <div class="text-sm text-gray-600">
+                            A tender and juicy cut of lamb, seasoned and roasted to perfection, served with seasonal vegetables and a red wine reduction.
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                            <div class="text-xl font-medium">Seafood Paella</div>
+                            <div class="text-xl font-medium">$29</div>
+                            </div>
+                            <div class="text-sm text-gray-600">
+                            A traditional Spanish dish made with saffron-infused rice, seafood such as shrimp, clams, and mussels, and an assortment of vegetables.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16 md:mb-20">
+                        <h3 class="col-span-full text-2xl font-semibold font-fraunces text-center md:text-left">Popular Drinks</h3>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                            <div class="text-xl font-medium">Classic Martini</div>
+                            <div class="text-xl font-medium">$16</div>
+                            </div>
+                            <div class="text-sm text-gray-600">
+                            with gin or vodka, vermouth, and olives
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                            <div class="text-xl font-medium">Negroni</div>
+                            <div class="text-xl font-medium">$16</div>
+                            </div>
+                            <div class="text-sm text-gray-600">
+                            with gin, vermouth, and Campari
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                            <div class="text-xl font-medium">Old Fashioned</div>
+                            <div class="text-xl font-medium">$16</div>
+                            </div>
+                            <div class="text-sm text-gray-600">
+                            with whiskey, bitters, and sugar
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                    <a href="/menu" class="inline-block bg-custom-orange text-white font-semibold py-2 px-4 rounded-md hover:bg-orange-600 transition">
+                        Full Menu
+                    </a>
+                    </div>
+                </div>
             </div>
         </section>
     )

@@ -1,45 +1,52 @@
-import { Link } from 'react-router-dom'
-import Logo from '../icons_assets/Logo_footer.png'
-
-const Footer = (props)=> {
+const Footer = () => {
     return (
-            <section className='bg-[#fafafa] w-full'>
-                <div className='flex'>
-                    <div className='doormat-navigation'>
-                        <h3>All Food. No Spam.</h3>
-                        <h3>Get the newsletter here</h3>
-                        <input type="email" name="" id="" />
-                        <ul className='flex'>
-                            <li><Link to='/'>Home</Link></li>
-                            <li><Link to='/about'>About</Link></li>
-                            <li><Link to='/menu'>Menu</Link></li>
-                            <li><Link to='/bookings'>Reservations</Link></li>
-                            <li><Link to='/order-online'>Order Online</Link></li>
-                            <li><Link to='/login'>Login</Link></li>
-                        </ul>
+        <footer className="bg-gray-800 text-white py-8">
+            <div className="container mx-auto my-8 md:mt-16 px-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
+                    {/* Logo and Social Links */}
+                    <div className="flex flex-col justify-center">
+                        <a href="/" className="mb-4">
+                            <h3 className="text-xl md:text-7xl 5font-bold font-fraunces text-custom-orange">Ibtida</h3>
+                        </a>
                     </div>
-                    <div>
-                        <h4>Contact</h4>
-                        <p>97 Bob Junction</p>
-                        <p>+31 505 256 2654</p>
-                        <p>littlelemon@restaurant.com</p>
-                    </div>
-                    <div>
-                        <h4>Social Media Links</h4>
-                        <ul>
-                            <li><a href='https://www.instagram.com'>Instagram</a></li>
-                            <li><a href='https://www.twitter.com'>Twitter</a></li>
-                            <li><a href='https://www.facebook.com'>Facebook</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <img src={Logo} alt='Logo' className='h-10' />
-                <div className="copyright">
-                    Copyright ©️ 2024 Namra Mahak
-                    <a href='https://www.github.com/Bongani001' target='_blank' rel="noreferrer"><img src={require('../icons_assets/github-logo.png')} alt='Github logo' style={{width: 20, borderRadius: 5}} /></a>
-                </div>
-            </section>
-    )
-}
 
-export default Footer
+                    {/* Contact Information */}
+                    <div>
+                        <h2 className="text-4xl font-semibold mb-4 font-fraunces text-custom-orange">Contact</h2>
+                        <a href="mailto:hello@coco.io" className="text-sm block mb-2 hover:underline">hello@ibtida.io</a>
+                        <a href="tel:(123)456-7890" className="text-sm block hover:underline">(123) 456-7890</a>
+                    </div>
+
+                    {/* Hours */}
+                    <div>
+                        <div className="text-4xl font-semibold mb-4 font-fraunces text-custom-orange">Hours</div>
+                        <div className="text-sm">
+                            Tuesday - Sunday<br />
+                            8:00 am - 9:00 pm
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex flex-col my-8 md:my-16">
+                    <a href="#" className="text-sm mb-2 hover:underline">Instagram</a>
+                    <a href="#" className="text-sm hover:underline">Facebook</a>
+                </div>
+
+                <div className="flex flex-col md:flex-row justify-between items-center mt-8">
+                    {/* Legal Links */}
+                    <div className="flex space-x-4 mb-4 md:mb-0">
+                        <a href="https://www.linkedin.com/in/namra-mahak/" className="text-xs hover:underline">Namra Mahak</a>
+                        <a href="https://github.com/dev-namra" className="text-xs hover:underline">Github</a>
+                    </div>
+
+                    {/* Copyright */}
+                    <div className="text-xs text-center md:text-right">
+                        © 2024 Ibtida - all rights reserved.
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;
