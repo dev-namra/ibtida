@@ -4,13 +4,15 @@ import Specials from './Specials';
 import Story from './Story'
 import Storybg from "./Storybg";
 import Specialsbg from "./Specialsbg";
-import MenuSection from "./MenuSection";
+import MenuSectionBannerImage from "./MenuSectionBannerImage";
+import Testimonials from "./Testimonials";
 
 const HomePage = () => {
     return (
         <>
             <Hero />
-            <MenuSection />
+            <Testimonials />
+            <MenuSectionBannerImage />
             <Story />
             <Storybg />
             <Specials />

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Specials = () => {
 
     return (
@@ -9,7 +11,7 @@ const Specials = () => {
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16 md:mb-20">
-                        <h3 class="col-span-full text-2xl font-semibold font-fraunces text-center md:text-left">Favorite Dishes</h3>
+                        <h3 class="col-span-full text-2xl font-semibold font-fraunces text-center md:text-left">Best Sellers</h3>
 
                         <div>
                             <div class="flex justify-between items-center mb-2">
@@ -77,9 +79,8 @@ const Specials = () => {
                     </div>
 
                     <div class="text-center">
-                    <a href="/menu" class="inline-block bg-custom-orange text-white font-semibold py-2 px-4 rounded-md hover:bg-orange-600 transition">
-                        Full Menu
-                    </a>
+                    <Link to='/menu' className='inline-block bg-custom-orange text-white font-semibold py-2 px-4 rounded-md hover:bg-orange-600 transition'>Full Menu</Link>
+
                     </div>
                 </div>
             </div>

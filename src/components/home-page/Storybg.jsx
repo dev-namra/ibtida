@@ -1,6 +1,6 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
-import StorybgImage from '../../assets/story-image.jpg';
+import StorybgImage from '../../assets/PLATTER.jpeg';
 
 const Storybg = () => {
     return (
