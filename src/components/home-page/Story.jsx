@@ -5,10 +5,10 @@ const Story = () => {
         <section id='story' className="bg-background-col min-h-screen flex items-center justify-center">
             <div className="container max-w-screen-lg flex flex-col gap-8 md:gap-16 p-8">
                 <div className="flex flex-col gap-8 md:gap-16">
-                    <h2 className="text-custom-orange text-2xl md:text-5xl text-left md:leading-tight font-lobster-two">
+                    <h2 className="text-[#fafafa] text-2xl md:text-5xl text-left md:leading-tight font-italiana">
                         Ibtida is a celebration of heritage, elegance, and exquisite flavors.
                     </h2>
-                    <h2 className="text-custom-orange text-2xl md:text-5xl text-left md:leading-tight font-lobster-two">
+                    <h2 className="text-[#fafafa] text-2xl md:text-5xl text-left md:leading-tight font-italiana">
                         At Ibtida, each dish tells a story of the Mughal era, where every bite is a journey through history, infused with aromatic spices and regal opulence.
                     </h2>
                 </div>

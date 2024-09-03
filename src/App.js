@@ -4,7 +4,6 @@ import Homepage from './components/home-page/Homepage';
 import About from './components/About';
 import Menu from './components/Menu';
 import OrderOnline from './components/OrderOnline';
-import Login from './components/Login';
 import Footer from './components/Footer';
 import BookingPage from './components/bookings-page/BookingPage';
 import ConfirmedBooking from './components/bookings-page/ConfirmedBooking';
@@ -42,7 +41,6 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/menu' element={<Menu />} />
         <Route path='/order-online' element={<OrderOnline />} />
-        <Route path='/login' element={<Login />} />
         <Route
           path='/bookings'
           element={<BookingPage times={availableTime} dispatchs={dispatch} form={submitForm} userInfo={userBookingInfo} />}

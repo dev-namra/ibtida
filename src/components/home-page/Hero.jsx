@@ -1,7 +1,7 @@
 import React from 'react';
 import Video from '../../assets/hero-video.mp4';
 import { Link } from 'react-router-dom';
-import Ibtida from '../../assets/Ibtida-white.png';
+import Ibtida from '../../assets/Ibtida-orange.png';
 
 const Hero = () => {
     return (
@@ -19,9 +19,9 @@ const Hero = () => {
             <div className='relative z-10 text-center text-white flex flex-col items-center gap-8'>
                 <div className='flex flex-col items-center gap-4'>
                     <img src={Ibtida} alt="Little Lemon logo" className="w-36 md:w-44" />
-                    <div className="text-lg md:text-3xl italic text-custom-orange mt-2 font-lobster-two">Embark on a Culinary Journey Through the Royal Kitchens of Mughal India.</div>
+                    <div className="text-lg md:text-3xl text-white mt-2 font-italiana">Embark on a Culinary Journey Through the Royal Kitchens of Mughal India.</div>
                 </div>
-                <Link to="/menu" className="bg-transparent hover:bg-custom-orange text-custom-orange font-semibold hover:text-background-col py-2 px-4 border border-custom-orange hover:border-transparent rounded-full text-center font-work-sans">
+                <Link to="/menu" className="bg-custom-orange hover:bg-[#111] text-[#fff] py-2 md:py-3 px-4 md:px-16 border border-custom-orange hover:border-transparent rounded-full text-center font-work-sans text-sm md:text-base font-medium">
                     Reserve a Table
                 </Link>
             </div>

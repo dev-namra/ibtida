@@ -14,7 +14,8 @@ module.exports = {
         'fraunces': ['Fraunces', 'serif'],
         'roboto' : ['Roboto', 'sans-serif'],
         'work-sans' : ['Work Sans', 'sans-serif'],
-        'lobster-two' : ['Lobster Two', 'sans-serif']
+        'lobster-two' : ['Lobster Two', 'sans-serif'],
+        'italiana' : ['Italiana', 'sans-serif']
       }
     },
   },
