@@ -1,10 +1,46 @@
-import React from 'react';
-import { foodMenuData, drinksMenuData } from './data'; 
+import React, { useState, useEffect } from 'react';
 import { Parallax } from 'react-parallax';
 import Biryani from '../assets/mughlai-cuisine.png';
 import MenuSectionBanner from './home-page/MenuSectionBanner';
 
 const MenuPage = () => {
+  const [foodMenuData, setFoodMenuData] = useState([]);
+  const [drinksMenuData, setDrinksMenuData] = useState([]);
+
+  useEffect(() => {
+    // Fetch food menu items
+    fetch('http://localhost:5000/api/menu/food')
+      .then(response => response.json())
+      .then(data => {
+        const groupedData = data.reduce((acc, item) => {
+          if (!acc[item.category]) {
+            acc[item.category] = { category: item.category, items: [] };
+          }
+          acc[item.category].items.push(item);
+          return acc;
+        }, {});
+        setFoodMenuData(Object.values(groupedData));
+      })
+      .catch(error => console.error('Error fetching food menu:', error));
+
+
+    // Fetch drink menu items
+    fetch('http://localhost:5000/api/menu/drink')
+      .then(response => response.json())
+      .then(data => {
+        // Group the data by category
+        const groupedData = data.reduce((acc, item) => {
+          if (!acc[item.category]) {
+            acc[item.category] = { category: item.category, items: [] };
+          }
+          acc[item.category].items.push(item);
+          return acc;
+        }, {});
+        setDrinksMenuData(Object.values(groupedData));
+      })
+      .catch(error => console.error('Error fetching drinks menu:', error));
+  }, []);
+
   return (
     <div>
       {/* Parallax Hero Section */}
@@ -15,7 +51,6 @@ const MenuPage = () => {
           </div>
         </div>
       </Parallax> 
-
 
       {/* Food Menu Section */}
       <div id="menu" className="bg-white py-16">
@@ -42,10 +77,7 @@ const MenuPage = () => {
       {/* Parallax Hero Section */}
       <Parallax bgImage={Biryani} strength={300} className="h-96">
       </Parallax> 
-
     </div>
-
-
   );
 };
 

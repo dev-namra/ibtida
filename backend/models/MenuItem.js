@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const menuItemSchema = new mongoose.Schema({
   name: String,
-  description: String,
   price: Number,
+  description: String,
   category: String,
-  image: String
+  type: String // 'food' or 'drink'
 });
 
-module.exports = mongoose.model('MenuItem', menuItemSchema);
+module.exports = mongoose.model('MenuItem', menuItemSchema, 'Menu_Items');

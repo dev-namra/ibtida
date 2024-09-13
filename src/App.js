@@ -11,6 +11,7 @@ import { Routes, Route } from 'react-router-dom';
 function App() {
   const [userBookingInfo, setUserBookingInfo] = useState({});
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
+  const [availableTime] = useState(['17:00', '18:00', '19:00', '20:00', '21:00']);
  
 
   function submitForm(formData) {
@@ -30,10 +31,11 @@ function App() {
           path='/bookings'
           element={
             <BookingPage 
-              form={submitForm} 
+              formSubmit={submitForm} 
               userInfo={userBookingInfo}
               bookingConfirmed={bookingConfirmed}
               setBookingConfirmed={setBookingConfirmed}
+              availableTimes={availableTime} 
             />
           }
         />
