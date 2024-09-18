@@ -9,7 +9,7 @@ const MenuPage = () => {
 
   useEffect(() => {
     // Fetch food menu items
-    fetch('http://localhost:5000/api/menu/food')
+    fetch(`${process.env.REACT_APP_API_URL}/api/menu/food`)
       .then(response => response.json())
       .then(data => {
         const groupedData = data.reduce((acc, item) => {
@@ -25,7 +25,7 @@ const MenuPage = () => {
 
 
     // Fetch drink menu items
-    fetch('http://localhost:5000/api/menu/drink')
+    fetch(`${process.env.REACT_APP_API_URL}/api/menu/food`)
       .then(response => response.json())
       .then(data => {
         // Group the data by category
