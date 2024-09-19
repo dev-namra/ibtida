@@ -5,7 +5,7 @@ const menuItemSchema = new mongoose.Schema({
   price: Number,
   description: String,
   category: String,
-  type: String // 'food' or 'drink'
+  type: String 
 });
 
 module.exports = mongoose.model('MenuItem', menuItemSchema, 'Menu_Items');
