@@ -23,12 +23,10 @@ const MenuPage = () => {
       })
       .catch(error => console.error('Error fetching food menu:', error));
 
-
-    // Fetch drink menu items
-    fetch(`${process.env.REACT_APP_API_URL}/api/menu/food`)
+    // Fetch drink menu items from the correct endpoint
+    fetch(`${process.env.REACT_APP_API_URL}/api/menu/drinks`) // Assuming the drinks endpoint is `/api/menu/drinks`
       .then(response => response.json())
       .then(data => {
-        // Group the data by category
         const groupedData = data.reduce((acc, item) => {
           if (!acc[item.category]) {
             acc[item.category] = { category: item.category, items: [] };
@@ -50,7 +48,7 @@ const MenuPage = () => {
             <h2 className="text-5xl md:text-7xl font-bold text-white font-fraunces">Our Menu</h2>
           </div>
         </div>
-      </Parallax> 
+      </Parallax>
 
       {/* Food Menu Section */}
       <div id="menu" className="bg-white py-16">
@@ -76,7 +74,7 @@ const MenuPage = () => {
 
       {/* Parallax Hero Section */}
       <Parallax bgImage={Biryani} strength={300} className="h-96">
-      </Parallax> 
+      </Parallax>
     </div>
   );
 };
