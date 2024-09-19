@@ -24,7 +24,7 @@ const MenuPage = () => {
       .catch(error => console.error('Error fetching food menu:', error));
 
     // Fetch drink menu items from the correct endpoint
-    fetch(`${process.env.REACT_APP_API_URL}/api/menu/drinks`) // Assuming the drinks endpoint is `/api/menu/drinks`
+    fetch(`${process.env.REACT_APP_API_URL}/api/menu/drink`) 
       .then(response => response.json())
       .then(data => {
         const groupedData = data.reduce((acc, item) => {
