@@ -6,34 +6,38 @@ import MenuSectionBanner from './home-page/MenuSectionBanner';
 const MenuPage = () => {
   const [foodMenuData, setFoodMenuData] = useState([]);
   const [drinksMenuData, setDrinksMenuData] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [foodResponse, drinksResponse] = await Promise.all([
-          fetch(`${process.env.REACT_APP_API_URL}/api/menu/food`),
-          fetch(`${process.env.REACT_APP_API_URL}/api/menu/drink`)
-        ]);
-        const [foodData, drinksData] = await Promise.all([
-          foodResponse.json(),
-          drinksResponse.json()
-        ]);
-        setFoodMenuData(foodData);
-        setDrinksMenuData(drinksData);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    // Fetch food menu items
+    fetch(`${process.env.REACT_APP_API_URL}/api/menu/food`)
+      .then(response => response.json())
+      .then(data => {
+        const groupedData = data.reduce((acc, item) => {
+          if (!acc[item.category]) {
+            acc[item.category] = { category: item.category, items: [] };
+          }
+          acc[item.category].items.push(item);
+          return acc;
+        }, {});
+        setFoodMenuData(Object.values(groupedData));
+      })
+      .catch(error => console.error('Error fetching food menu:', error));
 
-    fetchData();
+    // Fetch drink menu items from the correct endpoint
+    fetch(`${process.env.REACT_APP_API_URL}/api/menu/drink`) 
+      .then(response => response.json())
+      .then(data => {
+        const groupedData = data.reduce((acc, item) => {
+          if (!acc[item.category]) {
+            acc[item.category] = { category: item.category, items: [] };
+          }
+          acc[item.category].items.push(item);
+          return acc;
+        }, {});
+        setDrinksMenuData(Object.values(groupedData));
+      })
+      .catch(error => console.error('Error fetching drinks menu:', error));
   }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div>
