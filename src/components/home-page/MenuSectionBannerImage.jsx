@@ -4,8 +4,13 @@ import Biryani from '../../assets/mughlai-cuisine.png';
 
 const MenuSectionBannerImage = () => {
     return (
-        <Parallax bgImage={Biryani} strength={300} className="h-screen">
-            </Parallax>
+        <Parallax
+            bgImage={Biryani}
+            strength={300}
+            className="h-screen" 
+            style={{ margin: 0, padding: 0 }} 
+        >
+        </Parallax>
     );
 };
 

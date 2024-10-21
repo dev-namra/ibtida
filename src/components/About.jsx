@@ -1,4 +1,5 @@
 import React from "react";
+import  { useEffect } from 'react';
 import StoryBanner from '../assets/interior-bg.jpg';
 import { Parallax } from 'react-parallax';
 import Chef from'../assets/chef.jpg';
@@ -7,7 +8,12 @@ import BiryaniImage from '../assets/about/top-view-pakistan-meal-composition-wit
 import KebabsImage from '../assets/about/high-angle-tasty-kebab-slate-with-other-dish-cutlery.jpg'; 
 import NihariImage from '../assets/about/pre-prepared-food-showcasing-ready-eat-delicious-meals-go.jpg'; 
 
+
 const About = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+    }, []);
   return (
     <div className="bg-gray-100">
       {/* Parallax Hero Section */}
