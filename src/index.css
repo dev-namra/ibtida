@@ -12,23 +12,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 
-@layer base {
-    html {
-      @apply scroll-smooth;
-    }
+/* Testimonials.css */
+.ticker {
+  display: flex;
+  animation: ticker 60s linear infinite; /* Slower speed */
+  animation-play-state: running; /* Ensure animation runs by default */
+}
+
+.ticker:hover {
+  animation-play-state: paused; /* Pause animation when hovering over the entire ticker */
+}
+@keyframes ticker {
+  0% {
+      transform: translateX(0%); /* Start from the right */
   }
-
-  @keyframes ticker {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+  100% {
+      transform: translateX(-100%); /* Move off the screen */
+  }
 }
-
-.animate-ticker {
-    animation: ticker 30s linear infinite;
-}
-
-  

@@ -1,7 +1,11 @@
 import React from "react";
 import StoryBanner from '../assets/interior-bg.jpg';
 import { Parallax } from 'react-parallax';
-import Chef from'../assets/chef.jpg'
+import Chef from'../assets/chef.jpg';
+import IbtidaVideo from '../assets/interior-video.mp4';
+import BiryaniImage from '../assets/about/top-view-pakistan-meal-composition-with-copy-space.jpg'; 
+import KebabsImage from '../assets/about/high-angle-tasty-kebab-slate-with-other-dish-cutlery.jpg'; 
+import NihariImage from '../assets/about/pre-prepared-food-showcasing-ready-eat-delicious-meals-go.jpg'; 
 
 const About = () => {
   return (
@@ -38,19 +42,22 @@ const About = () => {
         </div>
       </div>
 
-      {/* Video Section */}
-      <div className="bg-gray-200 py-16">
+       {/* Video Section */}
+       <div className="bg-background-beige py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-custom-orange font-italiana mb-4">A Glimpse into Ibtida</h2>
           <div className="aspect-w-16 aspect-h-9">
-            <iframe
-              src="https://www.youtube.com/embed/your-video-id"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+            <video
+              src={IbtidaVideo} // Use your imported video here
+              controls
               className="w-full h-full rounded-lg shadow-lg"
               title="Ibtida Restaurant Video"
-            ></iframe>
+              // Add autoplay and loop if desired
+              // autoPlay
+              // loop
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
@@ -79,32 +86,32 @@ const About = () => {
       </div>
 
       {/* Menu Section */}
-      <div className="bg-yellow-100 py-16">
+      <div className="bg-background-col py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-800 text-center mb-8">
+          <h2 className="text-4xl font-bold text-custom-orange text-center mb-8">
             Our Signature Dishes
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <img src="/path-to-dish1.jpg" alt="Dish 1" className="rounded-lg shadow-lg mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-800">Biryani</h3>
-              <p className="text-gray-600 mt-2">Aromatic, flavorful, and cooked to perfection.</p>
+              <img src={BiryaniImage} alt="Dish 1" className="rounded-lg shadow-lg mb-4" />
+              <h3 className="text-2xl font-semibold text-custom-orange">Biryani</h3>
+              <p className="text-white mt-2">Aromatic, flavorful, and cooked to perfection.</p>
             </div>
             <div className="text-center">
-              <img src="/path-to-dish2.jpg" alt="Dish 2" className="rounded-lg shadow-lg mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-800">Kebabs</h3>
-              <p className="text-gray-600 mt-2">Succulent and smoky, straight from the tandoor.</p>
+              <img src={KebabsImage} alt="Dish 2" className="rounded-lg shadow-lg mb-4" />
+              <h3 className="text-2xl font-semibold text-custom-orange">Kebabs</h3>
+              <p className="text-white mt-2">Succulent and smoky, straight from the tandoor.</p>
             </div>
             <div className="text-center">
-              <img src="/path-to-dish3.jpg" alt="Dish 3" className="rounded-lg shadow-lg mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-800">Nihari</h3>
-              <p className="text-gray-600 mt-2">A slow-cooked delicacy with a rich, savory flavor.</p>
+              <img src={NihariImage} alt="Dish 3" className="rounded-lg shadow-lg mb-4" />
+              <h3 className="text-2xl font-semibold text-custom-orange">Nihari</h3>
+              <p className="text-white mt-2">A slow-cooked delicacy with a rich, savory flavor.</p>
             </div>
           </div>
           <div className="mt-12 text-center">
             <a
               href="/menu"
-              className="inline-block bg-yellow-600 text-white font-semibold py-3 px-8 rounded-md shadow-md hover:bg-yellow-700 transition-colors"
+              className="inline-block bg-yellow-600 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-yellow-700 transition-colors"
             >
               View Full Menu
             </a>
@@ -124,7 +131,7 @@ const About = () => {
               allowfullscreen=""
               aria-hidden="false"
               tabindex="0"
-              className="w-full h-full rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg w-full h-48 md:h-80 lg:h-96"
               title="Google Map Location"
             ></iframe>
           </div>

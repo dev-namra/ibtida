@@ -15,31 +15,31 @@ const Specials = () => {
 
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                            <div class="text-xl font-medium">Beef Wellington</div>
-                            <div class="text-xl font-medium">$39</div>
+                            <div class="text-xl font-medium">Murgh Malai Kebab</div>
+                            <div class="text-xl font-medium">₹380</div>
                             </div>
                             <div class="text-sm text-gray-600">
-                            A classic dish made with filet mignon, pâté, and mushrooms, wrapped in puff pastry and baked to a golden brown.
+                            Tender chicken marinated in cream, yogurt, and mild spices
                             </div>
                         </div>
 
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                                <div class="text-xl font-medium">Rack of Lamb</div>
-                                <div class="text-xl font-medium">$29</div>
+                                <div class="text-xl font-medium">Dum Biryani</div>
+                                <div class="text-xl font-medium">₹500</div>
                             </div>
                             <div class="text-sm text-gray-600">
-                            A tender and juicy cut of lamb, seasoned and roasted to perfection, served with seasonal vegetables and a red wine reduction.
+                            Fragrant rice dish with meat or vegetables, cooked on dum
                             </div>
                         </div>
 
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                            <div class="text-xl font-medium">Seafood Paella</div>
-                            <div class="text-xl font-medium">$29</div>
+                            <div class="text-xl font-medium">Shahi Tukda</div>
+                            <div class="text-xl font-medium">₹220</div>
                             </div>
                             <div class="text-sm text-gray-600">
-                            A traditional Spanish dish made with saffron-infused rice, seafood such as shrimp, clams, and mussels, and an assortment of vegetables.
+                            Bread pudding with saffron and nuts
                             </div>
                         </div>
                     </div>
@@ -49,37 +49,37 @@ const Specials = () => {
 
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                            <div class="text-xl font-medium">Classic Martini</div>
-                            <div class="text-xl font-medium">$16</div>
+                            <div class="text-xl font-medium">Mango Lassi</div>
+                            <div class="text-xl font-medium">₹150</div>
                             </div>
                             <div class="text-sm text-gray-600">
-                            with gin or vodka, vermouth, and olives
+                            Yogurt-based mango drink
                             </div>
                         </div>
 
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                            <div class="text-xl font-medium">Negroni</div>
-                            <div class="text-xl font-medium">$16</div>
+                            <div class="text-xl font-medium">Thandai</div>
+                            <div class="text-xl font-medium">₹140</div>
                             </div>
                             <div class="text-sm text-gray-600">
-                            with gin, vermouth, and Campari
+                            Cooling spiced milk drink with nuts
                             </div>
                         </div>
 
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                            <div class="text-xl font-medium">Old Fashioned</div>
-                            <div class="text-xl font-medium">$16</div>
+                            <div class="text-xl font-medium">Badshahi Bahar</div>
+                            <div class="text-xl font-medium">₹190</div>
                             </div>
                             <div class="text-sm text-gray-600">
-                            with whiskey, bitters, and sugar
+                            Refreshing mix of mint and lime with a twist
                             </div>
                         </div>
                     </div>
 
                     <div class="text-center">
-                    <Link to='/menu' className='inline-block bg-custom-orange text-white font-semibold py-2 px-4 rounded-md hover:bg-orange-600 transition'>Full Menu</Link>
+                    <Link to='/menu' className='inline-block bg-custom-orange text-white font-semibold py-2 px-4 md:px-20 rounded-full hover:bg-orange-600 transition'>View Full Menu</Link>
 
                     </div>
                 </div>
