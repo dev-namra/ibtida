@@ -16,26 +16,26 @@ const Navigation = () => {
     return (
         <header className="bg-background-beige shadow-md sticky top-0 z-50">
             <nav className="container mx-auto p-4 flex justify-between items-center relative">
-                <Link to="/" className="flex items-center">
+                <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center">
                     <img src={Logo} alt="Ibtida logo" className="h-6 w-auto" />
                 </Link>
                 <div className="md:hidden relative z-50">
                     <button onClick={toggleMenu} className="relative w-8 h-8 focus:outline-none">
                         {/* Top bar */}
                         <span
-                            className={`block absolute w-8 h-1 bg-gray-700 transition-transform duration-300 ease-in-out ${
+                            className={`block absolute w-8 h-0.5 bg-gray-700 transition-transform duration-300 ease-in-out ${
                                 isOpen ? 'rotate-45 top-3.5' : 'top-2'
                             }`}
                         />
                         {/* Middle bar */}
                         <span
-                            className={`block absolute w-8 h-1 bg-gray-700 transition-opacity duration-300 ease-in-out ${
+                            className={`block absolute w-8 h-0.5 bg-gray-700 transition-opacity duration-300 ease-in-out ${
                                 isOpen ? 'opacity-0' : 'opacity-100 top-3.5'
                             }`}
                         />
                         {/* Bottom bar */}
                         <span
-                            className={`block absolute w-8 h-1 bg-gray-700 transition-transform duration-300 ease-in-out ${
+                            className={`block absolute w-8 h-0.5 bg-gray-700 transition-transform duration-300 ease-in-out ${
                                 isOpen ? '-rotate-45 top-3.5' : 'top-5'
                             }`}
                         />
@@ -50,7 +50,7 @@ const Navigation = () => {
                         <Link
                             to="/about"
                             onClick={() => setIsOpen(false)}
-                            className={`block py-4 px-4 text-custom-orange hover:text-custom-orange md:hover:text-white md:text-[#111] font-Lobster Two text-xl md:text-base ${
+                            className={`block py-4 px-4 text-custom-orange hover:text-white md:hover:text-custom-orange md:text-[#111] font-Lobster Two text-xl md:text-base ${
                                 isActive('/about') ? 'underline underline-offset-4' : ''
                             }`}
                         >
@@ -61,7 +61,7 @@ const Navigation = () => {
                         <Link
                             to="/menu"
                             onClick={() => setIsOpen(false)}
-                            className={`block py-4 px-4 text-custom-orange hover:text-custom-orange md:text-[#111] font-Lobster Two text-xl md:text-base ${
+                            className={`block py-4 px-4 text-custom-orange hover:text-white md:hover:text-custom-orange md:text-[#111] font-Lobster Two text-xl md:text-base ${
                                 isActive('/menu') ? 'underline underline-offset-4' : ''
                             }`}
                         >
@@ -72,7 +72,7 @@ const Navigation = () => {
                         <Link
                             to="/bookings"
                             onClick={() => setIsOpen(false)}
-                            className={`block py-4 px-4 text-custom-orange hover:text-custom-orange md:text-[#111] font-Lobster Two text-xl md:text-base ${
+                            className={`block py-4 px-4 text-custom-orange hover:text-white md:hover:text-custom-orange md:text-[#111] font-Lobster Two text-xl md:text-base ${
                                 isActive('/bookings') ? 'underline underline-offset-4' : ''
                             }`}
                         >
@@ -83,7 +83,7 @@ const Navigation = () => {
                         <Link
                             to="/order-online"
                             onClick={() => setIsOpen(false)}
-                            className={`block py-4 px-4 text-custom-orange hover:text-custom-orange md:text-[#fff] md:hover:text-custom-orange md:bg-background-col md:rounded-full font-work-sans text-xl md:text-base ${
+                            className={`block py-4 px-4 text-custom-orange hover:text-white md:hover:text-custom-orange md:text-[#fff] md:bg-background-col md:rounded-full font-work-sans text-xl md:text-base ${
                                 isActive('/order-online') ? 'underline underline-offset-4' : ''
                             }`}
                         >

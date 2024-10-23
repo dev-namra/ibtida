@@ -17,7 +17,7 @@ function BookingPage(props) {
         </div>
         <div className="absolute top-0 left-0 w-full h-96 bg-black opacity-50"></div>
       </Parallax>
-        <div className="text-center py-20 h-96 flex flex-col justify-center items-center">
+        <div className="bg-[#fff] text-center py-20 h-96 flex flex-col justify-center items-center">
           <h1 className="text-3xl font-bold text-green-600 mb-4">Your table is booked!</h1>
           <p className="text-xl">Thank you for choosing our restaurant.</p>
         </div>
