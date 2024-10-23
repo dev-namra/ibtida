@@ -6,9 +6,9 @@ const Storybg = () => {
     return (
         <Parallax 
             bgImage={StorybgImage} 
-            strength={200} 
-            className="h-screen w-full" // Full width and height
-            style={{ margin: 0, padding: 0 }} // Reset margins and paddings
+            strength={300} 
+            className="h-screen w-full" 
+            style={{ margin: 0, padding: 0 }} 
             bgImageStyle={{ objectFit: 'cover', width: '100%', height: '100%' }}
         >
             <div className="h-full"></div>

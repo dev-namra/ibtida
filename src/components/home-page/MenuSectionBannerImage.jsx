@@ -7,7 +7,7 @@ const MenuSectionBannerImage = () => {
         <Parallax
         bgImage={Biryani}
         strength={200}
-        className="h-96" 
+        className="h-screen" 
         bgImageStyle={{ objectFit: 'cover', width: '100%', height: '100%' }} 
         >
         <div className="h-full"></div>

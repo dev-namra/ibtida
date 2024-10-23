@@ -5,38 +5,59 @@ import Biryani from '../assets/mughlai-cuisine.png';
 const MenuPage = () => {
   const [foodMenuData, setFoodMenuData] = useState([]);
   const [drinksMenuData, setDrinksMenuData] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
+  const [error, setError] = useState(null); // Add error state
 
   useEffect(() => {
-    // Fetch food menu items
-    fetch(`${process.env.REACT_APP_API_URL}/api/menu/food`)
-      .then(response => response.json())
-      .then(data => {
-        const groupedData = data.reduce((acc, item) => {
-          if (!acc[item.category]) {
-            acc[item.category] = { category: item.category, items: [] };
-          }
-          acc[item.category].items.push(item);
-          return acc;
-        }, {});
-        setFoodMenuData(Object.values(groupedData));
-      })
-      .catch(error => console.error('Error fetching food menu:', error));
+    // Scroll to top when the component mounts
+    window.scrollTo(0, 0);
 
-    // Fetch drink menu items from the correct endpoint
-    fetch(`${process.env.REACT_APP_API_URL}/api/menu/drink`) 
-      .then(response => response.json())
-      .then(data => {
-        const groupedData = data.reduce((acc, item) => {
+    const fetchMenuData = async () => {
+      try {
+        // Fetch food menu items
+        const foodResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/menu/food`);
+        if (!foodResponse.ok) throw new Error('Failed to fetch food menu');
+        const foodData = await foodResponse.json();
+        const groupedFoodData = foodData.reduce((acc, item) => {
           if (!acc[item.category]) {
             acc[item.category] = { category: item.category, items: [] };
           }
           acc[item.category].items.push(item);
           return acc;
         }, {});
-        setDrinksMenuData(Object.values(groupedData));
-      })
-      .catch(error => console.error('Error fetching drinks menu:', error));
+        setFoodMenuData(Object.values(groupedFoodData));
+
+        // Fetch drink menu items
+        const drinkResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/menu/drink`); 
+        if (!drinkResponse.ok) throw new Error('Failed to fetch drinks menu');
+        const drinkData = await drinkResponse.json();
+        const groupedDrinkData = drinkData.reduce((acc, item) => {
+          if (!acc[item.category]) {
+            acc[item.category] = { category: item.category, items: [] };
+          }
+          acc[item.category].items.push(item);
+          return acc;
+        }, {});
+        setDrinksMenuData(Object.values(groupedDrinkData));
+
+      } catch (error) {
+        console.error('Error fetching menu:', error);
+        setError(error.message); // Set error message
+      } finally {
+        setLoading(false); // Set loading to false once data is fetched
+      }
+    };
+
+    fetchMenuData();
   }, []);
+
+  if (loading) {
+    return <div className="text-center py-16">Loading menu...</div>; // Loading state
+  }
+
+  if (error) {
+    return <div className="text-center py-16 text-red-500">{error}</div>; // Error message
+  }
 
   return (
     <div>
@@ -72,13 +93,13 @@ const MenuPage = () => {
 
       {/* Parallax Hero Section */}
       <Parallax
-      bgImage={Biryani}
-      strength={200}
-      className="h-96" 
-      bgImageStyle={{ objectFit: 'cover', width: '100%', height: '100%' }} 
-    >
-      <div className="h-full"></div>
-    </Parallax>
+        bgImage={Biryani}
+        strength={200}
+        className="h-96" 
+        bgImageStyle={{ objectFit: 'cover', width: '100%', height: '100%' }} 
+      >
+        <div className="h-full"></div>
+      </Parallax>
     </div>
   );
 };

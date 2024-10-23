@@ -7,7 +7,7 @@ const Specials = () => {
             <div class="container mx-auto px-4">
                 <div class="py-12 md:py-20">
                     <div class="mb-16 text-center">
-                        <h2 class="text-5xl md:text-7xl font-bold font-fraunces text-custom-orange">Our Menu</h2>
+                        <h2 class="text-5xl md:text-7xl font-bold font-italiana text-custom-orange">Our Menu</h2>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16 md:mb-20">

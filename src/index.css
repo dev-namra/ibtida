@@ -15,13 +15,21 @@
 /* Testimonials.css */
 .ticker {
   display: flex;
-  animation: ticker 60s linear infinite; /* Slower speed */
-  animation-play-state: running; /* Ensure animation runs by default */
+  animation: ticker 15s linear infinite; /* Default speed for larger screens */
+  animation-play-state: running; 
 }
 
 .ticker:hover {
   animation-play-state: paused; /* Pause animation when hovering over the entire ticker */
 }
+
+/* Responsive Design */
+@media (max-width: 768px) { /* Adjust this breakpoint as needed */
+  .ticker {
+    animation: ticker 5s linear infinite; /* Slower speed for mobile devices */
+  }
+}
+
 @keyframes ticker {
   0% {
       transform: translateX(0%); /* Start from the right */

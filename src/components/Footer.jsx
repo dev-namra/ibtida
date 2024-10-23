@@ -1,4 +1,8 @@
+import { useLocation } from 'react-router-dom';
+
 const Footer = () => {
+    const location = useLocation(); 
+
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -6,14 +10,18 @@ const Footer = () => {
         });
     };
 
+
+    const isBookingPage = location.pathname === '/order-online';
+
     return (
         <section>
             <div className="bg-background-col flex items-center justify-center py-4 md:py-8">
-                {/* Back to top functionality with an arrow */}
-                <p className="text-base text-white block mb-2 cursor-pointer" onClick={scrollToTop}>
-                    <span className="hover:underline hover:underline-offset-2">Back to top</span>
-                    <span className="ml-2">↑</span> {/* Arrow without underline */}
-                </p>
+                {!isBookingPage && (
+                    <p className="text-base text-white block mb-2 cursor-pointer" onClick={scrollToTop}>
+                        <span className="hover:underline hover:underline-offset-2">Back to top</span>
+                        <span className="ml-2">↑</span> {/* Arrow without underline */}
+                    </p>
+                )}
             </div>
             <footer className="bg-background-col text-white py-4">
                 <div className="container mx-auto my-8 md:mt-16 px-4">

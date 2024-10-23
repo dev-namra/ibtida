@@ -36,10 +36,10 @@ const Testimonials = () => {
 
     return (
         <section className="bg-[#fff]">
-            <h1 className='text-custom-orange text-2xl text-center font-italiana mx-auto pt-8 md:pt-32 pb-4 font-bold'>TESTIMONIALS</h1>
-            <h1 className='font-italiana text-xl md:text-2xl text-center mx-auto text-background-col pb-8 md:pb-14 font-semibold'>We care about our customer experience</h1>
+            <h1 className='text-custom-orange text-5xl md:text-7xl  text-center font-italiana mx-auto pt-8 md:pt-32 pb-4 font-bold'>Testimonials</h1>
+            <h1 className='font-italiana text-l md:text-xl text-center mx-auto text-background-col pb-8 md:pb-14 font-semibold'>We care about our customer experience</h1>
             <div className="overflow-hidden relative">
-                <div className="ticker flex pb-8 md:pb-40">
+                <div className="ticker flex mb-8 md:mb-40">
                     {testimonials.concat(testimonials).map((testimonial, index) => (
                         <div key={index} className="inline-block mx-4 text-lg md:text-2xl text-gray-700 font-work-sans flex-shrink-0 w-full max-w-sm">
                             <div className="relative p-8 bg-background-beige h-96 flex rounded-3xl flex-col items-center justify-center text-center">
