@@ -118,7 +118,7 @@ const About = () => {
           <div className="mt-12 text-center">
             <a
               href="/menu"
-              className="inline-block bg-yellow-600 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-yellow-700 transition-colors"
+              className="inline-block bg-custom-orange text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-yellow-700 transition-colors"
             >
               View Full Menu
             </a>
