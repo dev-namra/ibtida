@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 text-white py-8">
+        <footer className="bg-background-col text-white py-8">
             <div className="container mx-auto my-8 md:mt-16 px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
                     {/* Logo and Social Links */}
@@ -22,7 +22,7 @@ const Footer = () => {
                         <div className="text-4xl font-semibold mb-4 font-fraunces text-custom-orange">Hours</div>
                         <div className="text-sm">
                             Tuesday - Sunday<br />
-                            8:00 am - 9:00 pm
+                            4:00 pm - 11:00 pm
                         </div>
                     </div>
                 </div>

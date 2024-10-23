@@ -8,10 +8,20 @@ function BookingPage(props) {
   if (bookingStage) {
     props.setBookingConfirmed(true);
     return (
-      <div className="text-center py-20">
-        <h1 className="text-3xl font-bold text-green-600 mb-4">Your table is booked!</h1>
-        <p className="text-xl">Thank you for choosing our restaurant.</p>
-      </div>
+      <section>
+        <Parallax bgImage={Biryani} strength={300} className="h-96">
+        <div className="flex items-center justify-center h-full pt-16 md:pt-32">
+          <div className="flex flex-col items-center relative z-10">
+            <h2 className="text-5xl md:text-7xl font-bold text-white font-fraunces">Reservations</h2>
+          </div>
+        </div>
+        <div className="absolute top-0 left-0 w-full h-96 bg-black opacity-50"></div>
+      </Parallax>
+        <div className="text-center py-20 h-96 flex flex-col justify-center items-center">
+          <h1 className="text-3xl font-bold text-green-600 mb-4">Your table is booked!</h1>
+          <p className="text-xl">Thank you for choosing our restaurant.</p>
+        </div>
+      </section>
     );
   }
 
@@ -23,6 +33,7 @@ function BookingPage(props) {
             <h2 className="text-5xl md:text-7xl font-bold text-white font-fraunces">Reservations</h2>
           </div>
         </div>
+        <div className="absolute top-0 left-0 w-full h-96 bg-black opacity-50"></div>
       </Parallax>
 
       <div className="bg-white flex items-center justify-center py-8 md:py-20">
@@ -48,7 +59,6 @@ function BookingForm(props) {
   const [date, setDate] = useState('');
   const [time, setTime] = useState(props.availableTimes && props.availableTimes.length > 0 ? props.availableTimes[0] : '');
   const [guests, setGuests] = useState('');
-  const [occasion, setOccasion] = useState('');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -67,12 +77,12 @@ function BookingForm(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!date || !occasion || !guests || !name || !phone || !email) return;
+    if (!date || !guests || !name || !phone || !email) return;
     setIsConfirming(true);
   }
 
   function handleConfirmation() {
-    const reservationInfo = { date, time, guests, occasion, name, phone, email };
+    const reservationInfo = { date, time, guests, name, phone, email };
     props.formSubmit(reservationInfo);
     props.setBookingStage(true);
   }
@@ -118,17 +128,8 @@ function BookingForm(props) {
             </select>
           </div>
           <div>
-            <label htmlFor="guests" className="block text-sm font-medium text-gray-700 mb-1">Party</label>
+            <label htmlFor="guests" className="block text-sm font-medium text-gray-700 mb-1">Guests</label>
             <input type="number" id="guests" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" min="1" max="10" value={guests} onChange={(e) => setGuests(e.target.value)} required />
-          </div>
-          <div className="md:col-span-2">
-            <label htmlFor="occasion" className="block text-sm font-medium text-gray-700 mb-1">Occasion</label>
-            <select id="occasion" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" value={occasion} onChange={(e) => setOccasion(e.target.value)} required>
-              <option value="">Select an occasion</option>
-              <option value="None">None</option>
-              <option value="Birthday">Birthday</option>
-              <option value="Anniversary">Anniversary</option>
-            </select>
           </div>
           <div className="md:col-span-2">
             <button type="submit" className="w-full bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-600 transition duration-300">Reserve Table</button>
@@ -141,7 +142,6 @@ function BookingForm(props) {
           <p>Date: {date}</p>
           <p>Time: {time}</p>
           <p>Guests: {guests}</p>
-          <p>Occasion: {occasion}</p>
           <p>Phone: {phone}</p>
           <p>Email: {email}</p>
           <div className="mt-6">
@@ -153,7 +153,7 @@ function BookingForm(props) {
             </button>
             <button 
               onClick={() => setIsConfirming(false)}
-              className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition duration-300"
+              className="text-[#111] hover:text-white py-2 px-4 rounded-md hover:bg-gray-300 transition duration-300"
             >
               Edit Details
             </button>

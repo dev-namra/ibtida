@@ -19,7 +19,7 @@ const Hero = () => {
             <div className='relative z-10 text-center text-white flex flex-col items-center gap-8'>
                 <div className='flex flex-col items-center gap-4'>
                     <img src={Ibtida} alt="Little Lemon logo" className="w-36 md:w-44" />
-                    <div className="text-lg md:text-3xl text-white mt-2 font-italiana">Embark on a Culinary Journey Through the Royal Kitchens of Mughal India.</div>
+                    <div className="text-lg md:text-3xl text-white mt-2 font-italiana px-8">Embark on a Culinary Journey Through the Royal Kitchens of Mughal India.</div>
                 </div>
                 <Link to="/menu" className="bg-custom-orange hover:bg-[#111] text-[#fff] py-2 md:py-3 px-4 md:px-16 border border-custom-orange hover:border-transparent rounded-full text-center font-work-sans text-sm md:text-base font-medium">
                     Reserve a Table

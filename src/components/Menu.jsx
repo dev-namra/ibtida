@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Parallax } from 'react-parallax';
 import Biryani from '../assets/mughlai-cuisine.png';
-import MenuSectionBanner from './home-page/MenuSectionBanner';
 
 const MenuPage = () => {
   const [foodMenuData, setFoodMenuData] = useState([]);
@@ -42,12 +41,13 @@ const MenuPage = () => {
   return (
     <div>
       {/* Parallax Hero Section */}
-      <Parallax bgImage={Biryani} strength={300} className="h-96">
+      <Parallax bgImage={Biryani} strength={200} className="h-96">
         <div className="flex items-center justify-center h-full pt-16 md:pt-32">
           <div className="flex flex-col items-center relative z-10">
             <h2 className="text-5xl md:text-7xl font-bold text-white font-fraunces">Our Menu</h2>
           </div>
         </div>
+        <div className="absolute top-0 left-0 w-full h-96 bg-black opacity-50"></div>
       </Parallax>
 
       {/* Food Menu Section */}
@@ -70,11 +70,15 @@ const MenuPage = () => {
         </div>
       </div>
 
-      <MenuSectionBanner />
-
       {/* Parallax Hero Section */}
-      <Parallax bgImage={Biryani} strength={300} className="h-96">
-      </Parallax>
+      <Parallax
+      bgImage={Biryani}
+      strength={200}
+      className="h-96" 
+      bgImageStyle={{ objectFit: 'cover', width: '100%', height: '100%' }} 
+    >
+      <div className="h-full"></div>
+    </Parallax>
     </div>
   );
 };
@@ -85,8 +89,8 @@ const MenuSection = ({ data }) => {
     <>
       {data.map((section, index) => (
         <div key={index} className="mb-10">
-          <h3 className="text-xl font-semibold">{section.category}</h3>
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <h3 className="text-xl font-semibold px-4">{section.category}</h3>
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
             {section.items.map((item, itemIndex) => (
               <MenuItem
                 key={itemIndex}

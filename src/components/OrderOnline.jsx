@@ -5,8 +5,8 @@ const OrderOnline = () => {
     return (
         <section id='order-online' className="bg-white min-h-[calc(100vh-24rem)] flex items-center justify-center">
             <div className="container max-w-screen-lg flex flex-col items-center gap-8 md:gap-16 p-8 text-center">
-                <h1 className="text-4xl font-bold text-primary mb-4 font-lobster-two">Order Online</h1>
-                <p className="text-lg mb-8">Choose your favorite platform to order from:</p>
+                <h1 className="text-4xl font-bold text-primary mb-4 font-italiana">Order Online</h1>
+                <p className="text-lg mb-8 font-work-sans">Choose your favorite platform to order from:</p>
                 
                 <div className="flex flex-col md:flex-row gap-8">
                     {/* Deliveroo */}
@@ -21,7 +21,7 @@ const OrderOnline = () => {
                             alt="Deliveroo" 
                             className="h-32 mb-4" 
                         />
-                        <span className="text-xl font-medium">Order on Deliveroo</span>
+                        <span className="text-xl font-medium font-work-sans">Order on Deliveroo</span>
                     </a>
 
                     {/* Uber Eats */}
@@ -36,7 +36,7 @@ const OrderOnline = () => {
                             alt="Uber Eats" 
                             className="h-32 mb-4" 
                         />
-                        <span className="text-xl font-medium">Order on Uber Eats</span>
+                        <span className="text-xl font-medium font-work-sans">Order on Uber Eats</span>
                     </a>
                 </div>
             </div>

@@ -17,12 +17,13 @@ const About = () => {
   return (
     <div className="bg-gray-100">
       {/* Parallax Hero Section */}
-      <Parallax bgImage={StoryBanner} strength={300} className="h-96">
+      <Parallax bgImage={StoryBanner} strength={200} className="h-96">
         <div className="flex items-center justify-center h-full pt-16 md:pt-32">
           <div className="flex flex-col items-center relative z-10">
             <h2 className="text-5xl md:text-7xl font-bold text-white font-fraunces">Our Story</h2>
           </div>
         </div>
+        <div className="absolute top-0 left-0 w-full h-96 bg-black opacity-50"></div>
       </Parallax> 
 
       {/* Introduction Section */}
